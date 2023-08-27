@@ -1,0 +1,50 @@
+
+
+  
+  .billing-page-container {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    background-image: url('./billing.jpg'); 
+    background-size: 100% 100%;
+    image-resolution: 10%;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-position: center; 
+    color: white;
+     text-align: center;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    
+    min-height: 100vh; 
+  }
+  
+  .card {
+    justify-self: center;
+    align-items: center;
+    font-size: larger;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgba(0, 0, 0, 0.5); 
+    padding: 20px;
+    color: white;
+    height: fit-content;
+    border-radius: 20px;
+  }
+
+  .card button {
+    background-color: #ff0000; 
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .card button:hover {
+    background-color: #cc0000; 
+  }
+  
