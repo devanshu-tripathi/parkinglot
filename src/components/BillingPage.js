@@ -43,8 +43,26 @@ function BillingPage() {
   }, [startTime, endTime]);
 
   const handlePayment = () => {
-
+    const currentParkingSlots = JSON.parse(localStorage.getItem('parkingSlots')) || [];
+  
+    const updatedParkingSlots = currentParkingSlots.map((row) =>
+      row.map((slot) => {
+        if (slot.occupied && slot.car === carNumber) {
+          return { occupied: false, car: null, startTime: null, endTime: null };
+        }
+        return slot;
+      })
+    );
+  
+    localStorage.setItem('parkingSlots', JSON.stringify(updatedParkingSlots));
+  
     setTotalAmount(0);
+  };
+  
+
+  const handleGoBack = () => {
+    // Navigate back to the ParkingLayout page
+    navigate('/parking-layout');
   };
 
   return (
@@ -71,7 +89,7 @@ function BillingPage() {
         ) : (
           <p>Payment has been completed.</p>
         )}
-        <button onClick={() => navigate(-1)} className="go-back-button">
+        <button onClick={handleGoBack} className="go-back-button">
           Go Back
         </button>
       </div>
