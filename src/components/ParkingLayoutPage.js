@@ -28,7 +28,7 @@ function ParkingLayout() {
       const carNumber = prompt('Enter car registration number:');
       
       if (carNumber === null) {
-        // User cancelled the prompt, no action needed.
+      
         return;
       }
   

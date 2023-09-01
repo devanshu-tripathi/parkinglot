@@ -14,6 +14,9 @@
 .navbar {
   background-color: #a89c9c;
   border-bottom: 1px solid #ccc;
+ 
+
+
 }
 
 .navbar-brand {
@@ -41,6 +44,7 @@
 .logout-button {
   background-color: red;
   color: #fff;
+
   padding: 5px 10px;
   border-radius: 5px;
   cursor: pointer;
@@ -104,84 +108,41 @@
   
   color: #201e1e;
 }
-/*
-.bottom-card {
-  width: 100%;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  align-self: center;
-  padding: 20px;
-}
 
-.input-car {
-  width: 100%;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  padding: 10px;
-
-
-  /*width: 100%;
-  border-radius: 5px;
-  border: 2px solid #ccc;
-  padding: 15px;
-  font-size: 16px;
-  transition: border-color 0.3s, box-shadow 0.3s;
-
-  /* Add some box-shadow to create depth when focused 
-  &:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-  }
-
-  &::placeholder {
-    color: #999;
-  }
-}
-
-.card-button {
-  background-color: red;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-*/
-/* Add this CSS to your 'styles0.css' file */
 
 .bottom-card {
   display: flex;
-  width: 30%;  
+  width: 40%;  
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 20px;
-  background-color: #f5f5f5; /* Background color for the bottom card */
-  border-top: 1px solid #ccc; /* Add a top border to separate from the parking grid */
+  background-color: #f5f5f5;
+  border-top: 1px solid #ccc;
 }
 
 .input-car {
   width: 100%;
-  max-width: 300px; /* Limit the input field width */
+  max-width: 300px; 
   border-radius: 5px;
   border: 1px solid #ccc;
   padding: 10px;
-  margin-bottom: 10px; /* Add some space between input and button */
+  margin-bottom: 10px; 
 }
 
 .card-button {
   width: 150px;
-  max-width: 300px; /* Limit the button width */
+  max-width: 300px; 
   background-color: red;
   color: #fff;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s; /* Add a smooth hover effect */
+  transition: background-color 0.3s; 
 }
 
 .card-button:hover {
-  background-color: #e60000; /* Darker red on hover */
+  background-color: #e60000; 
 }
 
 .rules{
