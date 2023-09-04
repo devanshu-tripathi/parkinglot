@@ -1,22 +1,43 @@
+body {
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: transparent transparent; /* Firefox */
+  overflow: scroll; /* Enable scrolling */
+ /* background-image: url('./parkinglayout.png');*/
+  background-color: #ccc;
+  width: 100%;
+  height: 100%;
+  background-repeat:no-repeat ;
+  max-height: fit-content;
+}
+::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
 
+::-webkit-scrollbar-thumb {
+  background-color: transparent; /* Color of the thumb (change as needed) */
+  border-radius: 4px; /* Round the thumb */
+}
 
+::-webkit-scrollbar-thumb:hover {
+  background-color: #ccc;
+}
 .parking-layout-container {
   width: 100%;
   min-height: fit-content;
   min-width: 100%;
   
-  background-image: url('./parkinglayout.png');
+  
   background-repeat: no-repeat;
   background-size: cover;
-  box-shadow: 5px 5px;
+ 
 }
 
 .navbar {
   background-color: #a89c9c;
   border-bottom: 1px solid #ccc;
  
-
-
+  border-radius: 10px;
+  box-shadow: 3px 3px;
 }
 
 .navbar-brand {
@@ -44,10 +65,14 @@
 .logout-button {
   background-color: red;
   color: #fff;
-
   padding: 5px 10px;
   border-radius: 5px;
   cursor: pointer;
+  margin-left: 15px; /* Add margin to the left */
+
+}
+.navbar-nav .nav-item:first-child {
+  margin-right: 10px;
 }
 
 .parking-grid-all {
@@ -55,6 +80,7 @@
   flex-direction: column;
   width: 100%;
   align-items: center;
+  padding-top: 20px;
   justify-content: center;
 }
 
@@ -74,33 +100,44 @@
 }
 
 .parking-slot {
-  width: 36%;
+  width: 50%;
   height: 36%;
   margin: 5px;
+  align-items: content;
   border: 2px solid #141414;
   font-size: xx-small;
   border-radius: 5px;
   background-color: #b0a4a4;
   text-align: center;
+  box-shadow: 3px 3px;
   cursor: pointer;
 }
 
 .parking-slot.occupied {
- background-color: transparent;
- border: none;
+  width: 50%;
+  height: 36%;
+  margin: 5px;
+ 
+  text-overflow: calc();
+  border: 2px solid #141414;
+  font-size: xx-small;
+  border-radius: 5px;
+  background-color: RED;
+  text-align: center;
+  cursor: pointer;
 }
 
 .click-button {
-  display: flex;
- 
+  width: 36%;
+  height: 36%;
+  margin: 5px;
+  
+  border: 2px solid #141414;
   font-size: xx-small;
-  align-items: center;
-  justify-content: center;
-  padding: 5px 10px;
-  background-color: red;
-  border: 1px solid #ccc;
   border-radius: 5px;
-  color: white;
+  background-color: red;
+  text-align: center;
+  cursor: pointer;
 }
 
 .registration-number {
@@ -113,23 +150,26 @@
 .bottom-card {
   display: flex;
   width: 40%;  
+  max-width: 320px; 
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 20px;
-  background-color: #f5f5f5;
   border-top: 1px solid #ccc;
 }
 
 .input-car {
-  width: 100%;
-  max-width: 300px; 
+  width: 250%;
+  max-width: 250px; 
   border-radius: 5px;
   border: 1px solid #ccc;
   padding: 10px;
   margin-bottom: 10px; 
 }
+.size-modal{
 
+  
+}
 .card-button {
   width: 150px;
   max-width: 300px; 
@@ -149,4 +189,50 @@
  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
  text-align: center;
  color: #e60000;
+}
+/* Alert Container */
+/* Alert Container */
+.alert-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+  z-index: 999; /* Ensure the alert is on top of other content */
+}
+
+/* Alert Box */
+.alert-box {
+  background-color: #fff; /* White background */
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  text-align: center;
+}
+
+/* Alert Message */
+.alert-message {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+/* Close Button */
+.alert-button {
+  background-color: red; /* Blue button color */
+  color: #fff; /* White text color */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.alert-button:hover {
+  background-color: #df7c70; /* Darker blue on hover */
 }

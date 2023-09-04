@@ -30,8 +30,6 @@ function ParkingLayout() {
   const [enteredCar, setEnteredCar] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalMessage, setModalMessage] = useState('');
-  const [isAlertOpen, setIsAlertOpen] = useState(false);
-  const [isAlertClose, setIsAlertClose] = useState(true);
   const [customPromptValue, setCustomPromptValue] = useState('');
   const [customPromptRow, setCustomPromptRow] = useState(null);
   const [customPromptCol, setCustomPromptCol] = useState(null);
@@ -50,31 +48,20 @@ function ParkingLayout() {
     setIsModalOpen(true);
     setModalMessage(message);
   };
-  
+
   const closeModal = () => {
-   
     setIsModalOpen(false);
     setModalMessage('');
     setCustomPromptValue('');
   };
 
- const onpenAlertModel=(message)=>{
-  setIsAlertOpen(true);
-  setModalMessage(message);
- }
- const closeAlertModal= () =>{
-  setIsAlertOpen(false);
-  setModalMessage('');
- }
   const handleCustomPromptSubmit = () => {
     if (!carNumberRegex.test(customPromptValue)) {
-      
-      onpenAlertModel('Invalid car registration number format. Please enter a valid number of format AB12CD3456.');
+      openModal('Invalid car registration number format. Please enter a valid number.');
     } else {
       const foundSlot = parkingSlots.flat().find(slot => slot.occupied && slot.car === customPromptValue);
       if (foundSlot) {
-        
-        onpenAlertModel('Car is already registered in the parking slots.');
+        openModal('Car is already registered in the parking slots.');
       } else {
         const updatedSlots = [...parkingSlots];
         const currentTime = new Date();
@@ -93,15 +80,11 @@ function ParkingLayout() {
     const slot = parkingSlots[row][col];
 
     if (!slot.occupied) {
-      if (isModalOpen) {
-        closeModal(); // Close the modal if it's open
-      }
       setCustomPromptRow(row);
       setCustomPromptCol(col);
       openModal();
     } else {
-      
-      onpenAlertModel(`CAR REGISTRATION NUMBER: ${slot.car} \n  START TIME: ${slot.startTime}`);
+      alert(`CAR REGISTRATION NUMBER: ${slot.car}\nSTART TIME: ${slot.startTime}`);
     }
   };
 
@@ -122,7 +105,7 @@ function ParkingLayout() {
         },
       });
     } else {
-      onpenAlertModel('Car not found in the parking slots.');
+      openModal('Car not found in the parking slots.');
     }
   };
 
@@ -217,13 +200,11 @@ function ParkingLayout() {
           <button onClick={closeModal} className='card-button'>Close</button>
         </div>
       </Modal>
-
-      {/* Display an alert if isModalOpen is true */}
-      {isAlertOpen && (
+      {isModalOpen && (
         <div className="alert-container">
           <div className="alert-box">
             <p>{modalMessage}</p>
-            <button onClick={closeAlertModal} className="alert-button">Close</button>
+            <button onClick={closeModal} className="alert-button">Close</button>
           </div>
         </div>
       )}
